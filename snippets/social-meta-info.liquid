@@ -1,0 +1,485 @@
+{% comment %}
+  Facebook Open Graph meta tags
+{% endcomment %}
+
+<meta name="author" content="{{ shop.name }}">
+{%- comment -%}Auto-disabled. Yoast plugin is taking care of Meta Tags output.{%- endcomment -%}
+{%- if disabled_by_yoast_seo -%}
+<meta property="og:url" content="{{ canonical_url }}">
+<!-- disabled_by_yoast_seo -->
+{%- endif -%}
+{%- comment -%}Auto-disabled. Yoast plugin is taking care of Meta Tags output.{%- endcomment -%}
+{%- if disabled_by_yoast_seo -%}
+<meta property="og:site_name" content="{{ shop.name }}">
+<!-- disabled_by_yoast_seo -->
+{%- endif -%}
+
+{% capture page_image %}
+  {%- comment -%}Auto-disabled. Yoast plugin is taking care of Meta Tags output.{%- endcomment -%}
+{%- if disabled_by_yoast_seo -%}
+<meta property="og:image" content="https:{{ page_image | img_url: '1200x' }}">
+<!-- disabled_by_yoast_seo -->
+{%- endif -%}
+  {%- comment -%}Auto-disabled. Yoast plugin is taking care of Meta Tags output.{%- endcomment -%}
+{%- if disabled_by_yoast_seo -%}
+<meta property="og:image:secure_url" content="https:{{ page_image | img_url: '1200x' }}">
+<!-- disabled_by_yoast_seo -->
+{%- endif -%}
+  {%- comment -%}Auto-disabled. Yoast plugin is taking care of Meta Tags output.{%- endcomment -%}
+{%- if disabled_by_yoast_seo -%}
+<meta property="og:image:width" content="{{ page_image.width }}">
+<!-- disabled_by_yoast_seo -->
+{%- endif -%}
+  {%- comment -%}Auto-disabled. Yoast plugin is taking care of Meta Tags output.{%- endcomment -%}
+{%- if disabled_by_yoast_seo -%}
+<meta property="og:image:height" content="{{ page_image.height }}">
+<!-- disabled_by_yoast_seo -->
+{%- endif -%}
+{% endcapture %}
+
+{% if template contains 'product' %}
+  {%- comment -%}Auto-disabled. Yoast plugin is taking care of Meta Tags output.{%- endcomment -%}
+{%- if disabled_by_yoast_seo -%}
+<meta property="og:type" content="product">
+<!-- disabled_by_yoast_seo -->
+{%- endif -%}
+  {%- comment -%}Auto-disabled. Yoast plugin is taking care of Meta Tags output.{%- endcomment -%}
+{%- if disabled_by_yoast_seo -%}
+<meta property="og:title" content="{{ product.title | strip_html | escape }}">
+<!-- disabled_by_yoast_seo -->
+{%- endif -%}
+  {% if product.featured_image.size > 0 %}
+    {% for image in product.images limit:3 %}
+      {%- comment -%}Auto-disabled. Yoast plugin is taking care of Meta Tags output.{%- endcomment -%}
+{%- if disabled_by_yoast_seo -%}
+{%- comment -%}Auto-disabled. Yoast plugin is taking care of Meta Tags output.{%- endcomment -%}
+{%- if disabled_by_yoast_seo -%}
+<meta property="og:image" content="https:{{ image.src | product_img_url: '600x' }}">
+<!-- disabled_by_yoast_seo -->
+{%- endif -%}
+<!-- disabled_by_yoast_seo -->
+{%- endif -%}
+      {%- comment -%}Auto-disabled. Yoast plugin is taking care of Meta Tags output.{%- endcomment -%}
+{%- if disabled_by_yoast_seo -%}
+{%- comment -%}Auto-disabled. Yoast plugin is taking care of Meta Tags output.{%- endcomment -%}
+{%- if disabled_by_yoast_seo -%}
+<meta property="og:image:secure_url" content="https:{{ image.src | product_img_url: '600x' }}">
+<!-- disabled_by_yoast_seo -->
+{%- endif -%}
+<!-- disabled_by_yoast_seo -->
+{%- endif -%}
+      {% if image.alt contains 'youtube' or image.alt contains 'vimeo' %}
+        {% assign src = image.alt | split: 'src="' %}
+        {% assign src = src[1] | split: '"' | first %}
+        <meta property="og:video" content="{{ src }}">
+      {% endif %}
+      {%- comment -%}Auto-disabled. Yoast plugin is taking care of Meta Tags output.{%- endcomment -%}
+{%- if disabled_by_yoast_seo -%}
+<meta property="og:image:width" content="{{ image.width }}">
+<!-- disabled_by_yoast_seo -->
+{%- endif -%}
+      {%- comment -%}Auto-disabled. Yoast plugin is taking care of Meta Tags output.{%- endcomment -%}
+{%- if disabled_by_yoast_seo -%}
+<meta property="og:image:height" content="{{ image.height }}">
+<!-- disabled_by_yoast_seo -->
+{%- endif -%}
+    {% endfor %}
+  {% else %}
+    {{ page_image }}
+  {% endif %}
+  {%- comment -%}Auto-disabled. Yoast plugin is taking care of Meta Tags output.{%- endcomment -%}
+{%- if disabled_by_yoast_seo -%}
+<meta property="product:price:amount" content="{{ product.price | money_without_currency | strip_html | escape }}">
+<!-- disabled_by_yoast_seo -->
+{%- endif -%}
+  {%- comment -%}Auto-disabled. Yoast plugin is taking care of Meta Tags output.{%- endcomment -%}
+{%- if disabled_by_yoast_seo -%}
+<meta property="product:price:currency" content="{{ shop.currency }}">
+<!-- disabled_by_yoast_seo -->
+{%- endif -%}
+{% elsif template contains 'collection' %}
+  {%- comment -%}Auto-disabled. Yoast plugin is taking care of Meta Tags output.{%- endcomment -%}
+{%- if disabled_by_yoast_seo -%}
+<meta property="og:type" content="product.group">
+<!-- disabled_by_yoast_seo -->
+{%- endif -%}
+  {%- comment -%}Auto-disabled. Yoast plugin is taking care of Meta Tags output.{%- endcomment -%}
+{%- if disabled_by_yoast_seo -%}
+<meta property="og:title" content="{{ collection.title | strip_html | escape }}">
+<!-- disabled_by_yoast_seo -->
+{%- endif -%}
+  {% if collection.image %}
+    {%- comment -%}Auto-disabled. Yoast plugin is taking care of Meta Tags output.{%- endcomment -%}
+{%- if disabled_by_yoast_seo -%}
+<meta property="og:image" content="https:{{ collection.image | img_url: '600x' }}">
+<!-- disabled_by_yoast_seo -->
+{%- endif -%}
+    {%- comment -%}Auto-disabled. Yoast plugin is taking care of Meta Tags output.{%- endcomment -%}
+{%- if disabled_by_yoast_seo -%}
+<meta property="og:image:secure_url" content="https:{{ collection.image | img_url: '600x' }}">
+<!-- disabled_by_yoast_seo -->
+{%- endif -%}
+    {%- comment -%}Auto-disabled. Yoast plugin is taking care of Meta Tags output.{%- endcomment -%}
+{%- if disabled_by_yoast_seo -%}
+<meta property="og:image:width" content="{{ collection.image.width }}">
+<!-- disabled_by_yoast_seo -->
+{%- endif -%}
+    {%- comment -%}Auto-disabled. Yoast plugin is taking care of Meta Tags output.{%- endcomment -%}
+{%- if disabled_by_yoast_seo -%}
+<meta property="og:image:height" content="{{ collection.image.height }}">
+<!-- disabled_by_yoast_seo -->
+{%- endif -%}
+    <meta property="og:image:alt" content="{{ collection.image.alt }}">
+  {% else %}
+    {{ page_image }}
+  {% endif %}
+  {% if collection.products_count > 0 %}
+    {% assign image = collection.products.first.featured_image %}
+    {%- comment -%}Auto-disabled. Yoast plugin is taking care of Meta Tags output.{%- endcomment -%}
+{%- if disabled_by_yoast_seo -%}
+{%- comment -%}Auto-disabled. Yoast plugin is taking care of Meta Tags output.{%- endcomment -%}
+{%- if disabled_by_yoast_seo -%}
+<meta property="og:image" content="https:{{ image.src | product_img_url: '600x' }}">
+<!-- disabled_by_yoast_seo -->
+{%- endif -%}
+<!-- disabled_by_yoast_seo -->
+{%- endif -%}
+    {%- comment -%}Auto-disabled. Yoast plugin is taking care of Meta Tags output.{%- endcomment -%}
+{%- if disabled_by_yoast_seo -%}
+{%- comment -%}Auto-disabled. Yoast plugin is taking care of Meta Tags output.{%- endcomment -%}
+{%- if disabled_by_yoast_seo -%}
+<meta property="og:image:secure_url" content="https:{{ image.src | product_img_url: '600x' }}">
+<!-- disabled_by_yoast_seo -->
+{%- endif -%}
+<!-- disabled_by_yoast_seo -->
+{%- endif -%}
+  {% endif %}
+{% elsif template contains 'article' %}
+  {%- comment -%}Auto-disabled. Yoast plugin is taking care of Meta Tags output.{%- endcomment -%}
+{%- if disabled_by_yoast_seo -%}
+{%- comment -%}Auto-disabled. Yoast plugin is taking care of Meta Tags output.{%- endcomment -%}
+{%- if disabled_by_yoast_seo -%}
+{%- comment -%}Auto-disabled. Yoast plugin is taking care of Meta Tags output.{%- endcomment -%}
+{%- if disabled_by_yoast_seo -%}
+<meta property="og:type" content="article">
+<!-- disabled_by_yoast_seo -->
+{%- endif -%}
+<!-- disabled_by_yoast_seo -->
+{%- endif -%}
+<!-- disabled_by_yoast_seo -->
+{%- endif -%}
+  {%- comment -%}Auto-disabled. Yoast plugin is taking care of Meta Tags output.{%- endcomment -%}
+{%- if disabled_by_yoast_seo -%}
+<meta property="og:title" content="{{ article.title | strip_html | escape }}">
+<!-- disabled_by_yoast_seo -->
+{%- endif -%}
+  {% assign img_tag = '<' | append: 'img' %}
+  {% if article.image %}
+    {%- comment -%}Auto-disabled. Yoast plugin is taking care of Meta Tags output.{%- endcomment -%}
+{%- if disabled_by_yoast_seo -%}
+{%- comment -%}Auto-disabled. Yoast plugin is taking care of Meta Tags output.{%- endcomment -%}
+{%- if disabled_by_yoast_seo -%}
+<meta property="og:image" content="https:{{ article.image | img_url: '600x' }}">
+<!-- disabled_by_yoast_seo -->
+{%- endif -%}
+<!-- disabled_by_yoast_seo -->
+{%- endif -%}
+    {%- comment -%}Auto-disabled. Yoast plugin is taking care of Meta Tags output.{%- endcomment -%}
+{%- if disabled_by_yoast_seo -%}
+{%- comment -%}Auto-disabled. Yoast plugin is taking care of Meta Tags output.{%- endcomment -%}
+{%- if disabled_by_yoast_seo -%}
+<meta property="og:image:secure_url" content="https:{{ article.image | img_url: '600x' }}">
+<!-- disabled_by_yoast_seo -->
+{%- endif -%}
+<!-- disabled_by_yoast_seo -->
+{%- endif -%}
+    {%- comment -%}Auto-disabled. Yoast plugin is taking care of Meta Tags output.{%- endcomment -%}
+{%- if disabled_by_yoast_seo -%}
+{%- comment -%}Auto-disabled. Yoast plugin is taking care of Meta Tags output.{%- endcomment -%}
+{%- if disabled_by_yoast_seo -%}
+<meta property="og:image:width" content="{{ article.image.width }}">
+<!-- disabled_by_yoast_seo -->
+{%- endif -%}
+<!-- disabled_by_yoast_seo -->
+{%- endif -%}
+    {%- comment -%}Auto-disabled. Yoast plugin is taking care of Meta Tags output.{%- endcomment -%}
+{%- if disabled_by_yoast_seo -%}
+{%- comment -%}Auto-disabled. Yoast plugin is taking care of Meta Tags output.{%- endcomment -%}
+{%- if disabled_by_yoast_seo -%}
+<meta property="og:image:height" content="{{ article.image.height }}">
+<!-- disabled_by_yoast_seo -->
+{%- endif -%}
+<!-- disabled_by_yoast_seo -->
+{%- endif -%}
+    <meta property="og:image:alt" content="{{ article.image.alt }}">
+  {% elsif article.content contains img_tag %}
+    {% assign src = article.content | split: 'src="' %}
+    {% assign src = src[1] | split: '"' | first | remove: 'https:' | remove: 'http:' %}
+    {% if src %}
+      {%- comment -%}Auto-disabled. Yoast plugin is taking care of Meta Tags output.{%- endcomment -%}
+{%- if disabled_by_yoast_seo -%}
+{%- comment -%}Auto-disabled. Yoast plugin is taking care of Meta Tags output.{%- endcomment -%}
+{%- if disabled_by_yoast_seo -%}
+{%- comment -%}Auto-disabled. Yoast plugin is taking care of Meta Tags output.{%- endcomment -%}
+{%- if disabled_by_yoast_seo -%}
+<meta property="og:image" content="https:{{ src }}">
+<!-- disabled_by_yoast_seo -->
+{%- endif -%}
+<!-- disabled_by_yoast_seo -->
+{%- endif -%}
+<!-- disabled_by_yoast_seo -->
+{%- endif -%}
+      {%- comment -%}Auto-disabled. Yoast plugin is taking care of Meta Tags output.{%- endcomment -%}
+{%- if disabled_by_yoast_seo -%}
+{%- comment -%}Auto-disabled. Yoast plugin is taking care of Meta Tags output.{%- endcomment -%}
+{%- if disabled_by_yoast_seo -%}
+{%- comment -%}Auto-disabled. Yoast plugin is taking care of Meta Tags output.{%- endcomment -%}
+{%- if disabled_by_yoast_seo -%}
+<meta property="og:image:secure_url" content="https:{{ src }}">
+<!-- disabled_by_yoast_seo -->
+{%- endif -%}
+<!-- disabled_by_yoast_seo -->
+{%- endif -%}
+<!-- disabled_by_yoast_seo -->
+{%- endif -%}
+    {% endif %}
+  {% else %}
+      {{ page_image }}
+  {% endif %}
+{% elsif template contains 'blog' %}
+  {%- comment -%}Auto-disabled. Yoast plugin is taking care of Meta Tags output.{%- endcomment -%}
+{%- if disabled_by_yoast_seo -%}
+{%- comment -%}Auto-disabled. Yoast plugin is taking care of Meta Tags output.{%- endcomment -%}
+{%- if disabled_by_yoast_seo -%}
+{%- comment -%}Auto-disabled. Yoast plugin is taking care of Meta Tags output.{%- endcomment -%}
+{%- if disabled_by_yoast_seo -%}
+<meta property="og:type" content="article">
+<!-- disabled_by_yoast_seo -->
+{%- endif -%}
+<!-- disabled_by_yoast_seo -->
+{%- endif -%}
+<!-- disabled_by_yoast_seo -->
+{%- endif -%}
+  {%- comment -%}Auto-disabled. Yoast plugin is taking care of Meta Tags output.{%- endcomment -%}
+{%- if disabled_by_yoast_seo -%}
+<meta property="og:title" content="{{ blog.title | strip_html | escape }}">
+<!-- disabled_by_yoast_seo -->
+{%- endif -%}
+  {% if blog.articles_count > 0 %}
+    {% assign article = blog.articles.first %}
+    {% assign img_tag = '<' | append: 'img' %}
+    {% if article.image %}
+      {%- comment -%}Auto-disabled. Yoast plugin is taking care of Meta Tags output.{%- endcomment -%}
+{%- if disabled_by_yoast_seo -%}
+{%- comment -%}Auto-disabled. Yoast plugin is taking care of Meta Tags output.{%- endcomment -%}
+{%- if disabled_by_yoast_seo -%}
+<meta property="og:image" content="https:{{ article.image | img_url: '600x' }}">
+<!-- disabled_by_yoast_seo -->
+{%- endif -%}
+<!-- disabled_by_yoast_seo -->
+{%- endif -%}
+      {%- comment -%}Auto-disabled. Yoast plugin is taking care of Meta Tags output.{%- endcomment -%}
+{%- if disabled_by_yoast_seo -%}
+{%- comment -%}Auto-disabled. Yoast plugin is taking care of Meta Tags output.{%- endcomment -%}
+{%- if disabled_by_yoast_seo -%}
+<meta property="og:image:secure_url" content="https:{{ article.image | img_url: '600x' }}">
+<!-- disabled_by_yoast_seo -->
+{%- endif -%}
+<!-- disabled_by_yoast_seo -->
+{%- endif -%}
+      {%- comment -%}Auto-disabled. Yoast plugin is taking care of Meta Tags output.{%- endcomment -%}
+{%- if disabled_by_yoast_seo -%}
+{%- comment -%}Auto-disabled. Yoast plugin is taking care of Meta Tags output.{%- endcomment -%}
+{%- if disabled_by_yoast_seo -%}
+<meta property="og:image:width" content="{{ article.image.width }}">
+<!-- disabled_by_yoast_seo -->
+{%- endif -%}
+<!-- disabled_by_yoast_seo -->
+{%- endif -%}
+      {%- comment -%}Auto-disabled. Yoast plugin is taking care of Meta Tags output.{%- endcomment -%}
+{%- if disabled_by_yoast_seo -%}
+{%- comment -%}Auto-disabled. Yoast plugin is taking care of Meta Tags output.{%- endcomment -%}
+{%- if disabled_by_yoast_seo -%}
+<meta property="og:image:height" content="{{ article.image.height }}">
+<!-- disabled_by_yoast_seo -->
+{%- endif -%}
+<!-- disabled_by_yoast_seo -->
+{%- endif -%}
+      <meta property="og:image:alt" content="{{ article.image.alt }}">
+    {% elsif article.content contains img_tag %}
+      {% assign src = article.content | split: 'src="' %}
+      {% assign src = src[1] | split: '"' | first | remove: 'https:' | remove: 'http:' %}
+      {% if src %}
+        {%- comment -%}Auto-disabled. Yoast plugin is taking care of Meta Tags output.{%- endcomment -%}
+{%- if disabled_by_yoast_seo -%}
+{%- comment -%}Auto-disabled. Yoast plugin is taking care of Meta Tags output.{%- endcomment -%}
+{%- if disabled_by_yoast_seo -%}
+{%- comment -%}Auto-disabled. Yoast plugin is taking care of Meta Tags output.{%- endcomment -%}
+{%- if disabled_by_yoast_seo -%}
+<meta property="og:image" content="https:{{ src }}">
+<!-- disabled_by_yoast_seo -->
+{%- endif -%}
+<!-- disabled_by_yoast_seo -->
+{%- endif -%}
+<!-- disabled_by_yoast_seo -->
+{%- endif -%}
+        {%- comment -%}Auto-disabled. Yoast plugin is taking care of Meta Tags output.{%- endcomment -%}
+{%- if disabled_by_yoast_seo -%}
+{%- comment -%}Auto-disabled. Yoast plugin is taking care of Meta Tags output.{%- endcomment -%}
+{%- if disabled_by_yoast_seo -%}
+{%- comment -%}Auto-disabled. Yoast plugin is taking care of Meta Tags output.{%- endcomment -%}
+{%- if disabled_by_yoast_seo -%}
+<meta property="og:image:secure_url" content="https:{{ src }}">
+<!-- disabled_by_yoast_seo -->
+{%- endif -%}
+<!-- disabled_by_yoast_seo -->
+{%- endif -%}
+<!-- disabled_by_yoast_seo -->
+{%- endif -%}
+      {% endif %}
+    {% else %}
+      {{ page_image }}
+    {% endif %}
+  {% endif %}
+{% elsif template contains 'page' %}
+  {%- comment -%}Auto-disabled. Yoast plugin is taking care of Meta Tags output.{%- endcomment -%}
+{%- if disabled_by_yoast_seo -%}
+{%- comment -%}Auto-disabled. Yoast plugin is taking care of Meta Tags output.{%- endcomment -%}
+{%- if disabled_by_yoast_seo -%}
+{%- comment -%}Auto-disabled. Yoast plugin is taking care of Meta Tags output.{%- endcomment -%}
+{%- if disabled_by_yoast_seo -%}
+<meta property="og:type" content="article">
+<!-- disabled_by_yoast_seo -->
+{%- endif -%}
+<!-- disabled_by_yoast_seo -->
+{%- endif -%}
+<!-- disabled_by_yoast_seo -->
+{%- endif -%}
+  {%- comment -%}Auto-disabled. Yoast plugin is taking care of Meta Tags output.{%- endcomment -%}
+{%- if disabled_by_yoast_seo -%}
+<meta property="og:title" content="{{ page.title | strip_html | escape }}">
+<!-- disabled_by_yoast_seo -->
+{%- endif -%}
+  {% assign img_tag = '<' | append: 'img' %}
+
+  {% if page.content contains img_tag %}
+    {% assign src = page.content | split: 'src="' %}
+    {% assign src = src[1] | split: '"' | first | remove: 'https:' | remove: 'http:' %}
+    {% if src %}
+      {%- comment -%}Auto-disabled. Yoast plugin is taking care of Meta Tags output.{%- endcomment -%}
+{%- if disabled_by_yoast_seo -%}
+{%- comment -%}Auto-disabled. Yoast plugin is taking care of Meta Tags output.{%- endcomment -%}
+{%- if disabled_by_yoast_seo -%}
+{%- comment -%}Auto-disabled. Yoast plugin is taking care of Meta Tags output.{%- endcomment -%}
+{%- if disabled_by_yoast_seo -%}
+<meta property="og:image" content="https:{{ src }}">
+<!-- disabled_by_yoast_seo -->
+{%- endif -%}
+<!-- disabled_by_yoast_seo -->
+{%- endif -%}
+<!-- disabled_by_yoast_seo -->
+{%- endif -%}
+      {%- comment -%}Auto-disabled. Yoast plugin is taking care of Meta Tags output.{%- endcomment -%}
+{%- if disabled_by_yoast_seo -%}
+{%- comment -%}Auto-disabled. Yoast plugin is taking care of Meta Tags output.{%- endcomment -%}
+{%- if disabled_by_yoast_seo -%}
+{%- comment -%}Auto-disabled. Yoast plugin is taking care of Meta Tags output.{%- endcomment -%}
+{%- if disabled_by_yoast_seo -%}
+<meta property="og:image:secure_url" content="https:{{ src }}">
+<!-- disabled_by_yoast_seo -->
+{%- endif -%}
+<!-- disabled_by_yoast_seo -->
+{%- endif -%}
+<!-- disabled_by_yoast_seo -->
+{%- endif -%}
+    {% endif %}
+  {% else %}
+      {{ page_image }}
+  {% endif %}
+{% else %}
+  {%- comment -%}Auto-disabled. Yoast plugin is taking care of Meta Tags output.{%- endcomment -%}
+{%- if disabled_by_yoast_seo -%}
+<meta property="og:type" content="website">
+<!-- disabled_by_yoast_seo -->
+{%- endif -%}
+  {%- comment -%}Auto-disabled. Yoast plugin is taking care of Meta Tags output.{%- endcomment -%}
+{%- if disabled_by_yoast_seo -%}
+<meta property="og:title" content="{{ page_title | escape }}">
+<!-- disabled_by_yoast_seo -->
+{%- endif -%}
+{% endif %}
+{% if template contains 'index' %}
+  {{ page_image }}
+{% endif %}
+{% if page_description %}
+  {%- comment -%}Auto-disabled. Yoast plugin is taking care of Meta Tags output.{%- endcomment -%}
+{%- if disabled_by_yoast_seo -%}
+<meta property="og:description" content="{% if template contains 'search' %} {{ page_title }} - {{ shop.name }} {% else %}{{ page_description | escape }}{% endif %}">
+<!-- disabled_by_yoast_seo -->
+{%- endif -%}
+{% endif %}
+
+{% comment %}
+  Twitter user name of the site, based on theme settings
+{% endcomment %}
+{% if settings.twitter_link != blank %}
+  {%- comment -%}Auto-disabled. Yoast plugin is taking care of Meta Tags output.{%- endcomment -%}
+{%- if disabled_by_yoast_seo -%}
+<meta name="twitter:site" content="{{ settings.twitter_link | split: 'twitter.com/' | last | prepend: '@' }}">
+<!-- disabled_by_yoast_seo -->
+{%- endif -%}
+{% endif %}
+{%- comment -%}Auto-disabled. Yoast plugin is taking care of Meta Tags output.{%- endcomment -%}
+{%- if disabled_by_yoast_seo -%}
+<meta name="twitter:card" content="summary">
+<!-- disabled_by_yoast_seo -->
+{%- endif -%}
+{% if template contains 'product' %}
+  {%- comment -%}Auto-disabled. Yoast plugin is taking care of Meta Tags output.{%- endcomment -%}
+{%- if disabled_by_yoast_seo -%}
+<meta name="twitter:title" content="{{ product.title }}">
+<!-- disabled_by_yoast_seo -->
+{%- endif -%}
+  {%- comment -%}Auto-disabled. Yoast plugin is taking care of Meta Tags output.{%- endcomment -%}
+{%- if disabled_by_yoast_seo -%}
+<meta name="twitter:description" content="{{ product.description | strip_html | truncatewords: 140, '' | escape }}">
+<!-- disabled_by_yoast_seo -->
+{%- endif -%}
+  {%- comment -%}Auto-disabled. Yoast plugin is taking care of Meta Tags output.{%- endcomment -%}
+{%- if disabled_by_yoast_seo -%}
+<meta name="twitter:image" content="https:{{ product.featured_image.src | img_url: '240x' }}">
+<!-- disabled_by_yoast_seo -->
+{%- endif -%}
+  <meta name="twitter:image:width" content="240">
+  <meta name="twitter:image:height" content="240">
+  <meta name="twitter:image:alt" content="{{ product.featured_image.alt | escape }}">
+{% elsif template contains 'article' %}
+  {%- comment -%}Auto-disabled. Yoast plugin is taking care of Meta Tags output.{%- endcomment -%}
+{%- if disabled_by_yoast_seo -%}
+<meta name="twitter:title" content="{{ article.title }}">
+<!-- disabled_by_yoast_seo -->
+{%- endif -%}
+  {%- comment -%}Auto-disabled. Yoast plugin is taking care of Meta Tags output.{%- endcomment -%}
+{%- if disabled_by_yoast_seo -%}
+<meta name="twitter:description" content="{{ article.excerpt_or_content | strip_html | truncatewords: 140, '' | escape }}">
+<!-- disabled_by_yoast_seo -->
+{%- endif -%}
+  {% if article.image %}
+    {%- comment -%}Auto-disabled. Yoast plugin is taking care of Meta Tags output.{%- endcomment -%}
+{%- if disabled_by_yoast_seo -%}
+<meta property="twitter:image" content="http:{{ article.image | img_url: '600x' }}">
+<!-- disabled_by_yoast_seo -->
+{%- endif -%}
+    <meta name="twitter:image:alt" content="{{ article.image.alt }}">
+  {% elsif article.content contains "<img" %}
+    {% assign src = article.content | split: 'src="' %}
+    {% assign src = src[1] | split: '"' | first | replace: '//cdn', 'http://cdn' | replace: 'http:http://', 'http://' | remove: 'https:' %}
+    {% if src %}
+      {%- comment -%}Auto-disabled. Yoast plugin is taking care of Meta Tags output.{%- endcomment -%}
+{%- if disabled_by_yoast_seo -%}
+<meta property="twitter:image" content="{{ src }}">
+<!-- disabled_by_yoast_seo -->
+{%- endif -%}
+    {% endif %}
+  {% endif %}
+{% endif %}
