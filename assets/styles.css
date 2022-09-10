@@ -15531,9 +15531,10 @@ footer .social_icons a:hover {
   .caption--below-true .caption {
     margin: 20px auto !important; /* Force caption margin */
     font-size: 3vw;
-    position: static;
+    /* position: static; */
     transform: none;
     width: 100%;
+    top: 34%;
   }
 }
 @media only screen and (max-width: 480px) {
