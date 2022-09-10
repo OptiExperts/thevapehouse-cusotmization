@@ -10,10 +10,12 @@
 {% assign mobile_text_alpha = section.settings.mobile_text_color | default: 'rgba(0,0,0,0)' | color_extract: 'alpha' %}
 
 <style>
-
-.caption a {
-    color: black;
-    border-color: black;
+@media (min-width: 200px) and (max-width: 767px) {
+  
+  .caption a {
+      color: black;
+      border-color: black;
+  }
 }
 
   {%
