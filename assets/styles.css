@@ -13042,7 +13042,7 @@ img[data-flickity-lazyload] {
 }
 .slider-gallery .flickity-prev-next-button {
   border-radius: 0;
-  opacity: 0;
+  opacity: 1;
   width: 5%;
 }
 
