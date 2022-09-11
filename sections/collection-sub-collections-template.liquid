@@ -1,3 +1,4 @@
+{% assign my_description = collection.description | split: '<!-- split -->'  %}
 <script
   type="application/json"
   data-section-type="collection-sub-collections-template"
@@ -189,7 +190,7 @@
             <div class="container">
               <div class="one-whole column">
                 <div class="collection_description rte">
-                  {{ collection.description }}
+                  {{ my_description[0] }}
                 </div>
               </div>
             </div>
@@ -227,6 +228,13 @@
                   paginate: paginate
                 %}
               </div>
+            </div>
+          {% endif %}
+
+          {% if my_description[1] != blank %}
+            <div class="">
+              {{ my_description[1] }}
+              <br/>
             </div>
           {% endif %}
 
