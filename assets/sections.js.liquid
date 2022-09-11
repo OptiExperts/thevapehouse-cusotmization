@@ -165,10 +165,11 @@ window.featuredPromotions = {
       $(this).find('.feature-details').slideDown('100', function () {
         $(this).addClass('reveal-details');
       });
-    }, function () {
-      $(this).find('.feature-details').removeClass('reveal-details');
-      $(this).find('.feature-details').slideUp('100');
-    });
+    }, 
+    // function () {
+    //   $(this).find('.feature-details').removeClass('reveal-details');
+    //   $(this).find('.feature-details').slideUp('100');
+    // });
 
     $('.js-featured-promotions').each(function () {
       const $promos = $(this);
