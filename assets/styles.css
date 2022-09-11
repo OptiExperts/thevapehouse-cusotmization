@@ -13054,11 +13054,11 @@ img[data-flickity-lazyload] {
   background: #ffffff;
 }
 .transparentBackground--false .flickity-prev-next-button {
-  background: transparent;
+  background: white;
 }
 .transparentBackground--false .flickity-prev-next-button .arrow {
   opacity: 1;
-  fill: #ffffff;
+  fill: black;
 }
 
 .homepage-slideshow.transparentBackground--false:hover .flickity-prev-next-button,
