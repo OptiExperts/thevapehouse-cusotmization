@@ -5,6 +5,7 @@
 >
 </script>
 
+<div class="waqas">this is a test</div>
 {%- assign id = section.id -%}
 
 {% comment %} Content settings {% endcomment %}
@@ -118,6 +119,16 @@
     </div>
   </section>
 {% endif %}
+
+<style>
+  @media (min-width: 768px) and (max-width: 1024px) {
+  
+  .waqas {
+    display: none;
+  }
+  
+}
+</style>
 
 {% schema %}
 {
