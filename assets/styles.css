@@ -13071,7 +13071,7 @@ img[data-flickity-lazyload] {
 .testimonial-slideshow.transparentBackground--false .flickity-page-dots .dot,
 .product-slider.transparentBackground--false .flickity-page-dots .dot,
 .slider-gallery.transparentBackground--false .flickity-page-dots .dot {
-  opacity: 0.4;
+  opacity: 1;
 }
 .homepage-slideshow.transparentBackground--false .flickity-page-dots .dot.is-selected,
 .testimonial-slideshow.transparentBackground--false .flickity-page-dots .dot.is-selected,
