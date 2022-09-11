@@ -12523,10 +12523,10 @@ http://flickity.metafizzy.co
 
 .flickity-prev-next-button svg {
   position: absolute;
-  left: 20%;
+  left: 0%;
   top: 20%;
-  width: 60%;
-  height: 60%;
+  width: 100%;
+  height: 100%;
 }
 
 .flickity-prev-next-button .arrow {
@@ -12669,8 +12669,8 @@ http://flickity.metafizzy.co
   padding: 10px 0;
   position: absolute;
   left: 20%;
-  width: 60%;
-  height: 60%;
+  width: 100%;
+  height: 100%;
 }
 
 .flickity-prev-next-button .arrow {
