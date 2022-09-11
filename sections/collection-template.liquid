@@ -219,9 +219,13 @@
         </div>
 
         {% if my_description[1] != blank %}
-          <div class="">
-            {{ my_description[1] }}
-          <br/>
+        <div class="truncate">
+          <div class="toggledText" id="toggledText">
+            <div class="">
+              {{ my_description[1] }}
+              <br/>
+            </div>
+          </div>
           </div>
         {% endif %}
 
@@ -245,6 +249,33 @@
     ShopifyXR('addModels', {{ models }});
   </script>
 {% endif %}
+
+<script>
+  document.querySelector('#readmore').addEventListener("click", function(e) {
+  e.preventDefault();
+  document.querySelector('#toggledText').classList.toggle('toggle');
+});
+</script>
+
+<style>
+  .toggledText {
+  height: 200px;
+  overflow: hidden;
+}
+
+.toggledText.toggle {
+ height: auto;
+}
+
+.readless-txt,
+.toggledText.toggle~#readmore span.readmore-txt {
+  display: none;
+ }
+
+.toggledText.toggle~#readmore span.readless-txt {
+   display: block;
+}
+</style>
 
 <script defer src="https://cdn.shopify.com/shopifycloud/shopify-xr-js/assets/v1.0/shopify-xr.en.js"></script>
 <script defer src="https://cdn.shopify.com/shopifycloud/model-viewer-ui/assets/v1.0/model-viewer-ui.en.js"></script>

@@ -232,9 +232,13 @@
           {% endif %}
 
           {% if my_description[1] != blank %}
-            <div class="">
-              {{ my_description[1] }}
-              <br/>
+          <div class="truncate">
+            <div class="toggledText" id="toggledText">
+              <div class="">
+                {{ my_description[1] }}
+                <br/>
+              </div>
+            </div>
             </div>
           {% endif %}
 
@@ -249,6 +253,33 @@
     </div>
   </section>
 {% endpaginate %}
+
+<script>
+  document.querySelector('#readmore').addEventListener("click", function(e) {
+  e.preventDefault();
+  document.querySelector('#toggledText').classList.toggle('toggle');
+});
+</script>
+
+<style>
+  .toggledText {
+  height: 200px;
+  overflow: hidden;
+}
+
+.toggledText.toggle {
+ height: auto;
+}
+
+.readless-txt,
+.toggledText.toggle~#readmore span.readmore-txt {
+  display: none;
+ }
+
+.toggledText.toggle~#readmore span.readless-txt {
+   display: block;
+}
+</style>
 
 {% if section.settings.align_height == true %}
   <style>
