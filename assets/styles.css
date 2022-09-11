@@ -16225,7 +16225,7 @@ footer .social_icons a:hover {
   pointer-events: none;
 }
 .featured-promotions .feature-section .feature-details {
-  display: none;
+  display: block;
   opacity: 0;
   transition: opacity 0.3s linear;
 }
