@@ -55,7 +55,7 @@
         <figure class="feature-section section-{{ forloop.index }} promo-{{ forloop.index }} {% render 'column-width', value: section.settings.featured_promos_per_row %} column medium-down--one-whole title-overlay-{{ section.settings.promo_text_on_image_enabled }} {% if section.settings.featured_links_animation != blank %}promo-animation--true{% endif %}" {{ block.shopify_attributes }}>
           <div class="feature-inner feature-style--{{ section.settings.feature_style }}">
             {% if mobile_image %}
-              <div class="carousel-cell is-hidden-mobile-only">
+              <div class="is-hidden-mobile-only">
             {% endif %}
             {% if image %}
               {%
@@ -70,7 +70,7 @@
             {% endif %}
             {% if mobile_image %}
               </div>
-              <div class="is-hidden-desktop-only">
+              <div class="carousel-cell is-hidden-desktop-only">
                 {%
                   render 'image-element',
                   image: mobile_image,
