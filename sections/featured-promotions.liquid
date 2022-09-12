@@ -121,6 +121,55 @@
   </section>
 {% endif %}
 
+<style>
+  * { box-sizing: border-box; }
+
+body { font-family: sans-serif; }
+
+.carousel {
+  background: #EEE;
+}
+
+/* flickity on by default */
+.carousel:after {
+  content: 'flickity';
+  display: none;
+}
+
+@media screen and ( min-width: 768px ) {
+  /* disable Flickity for large devices */
+  .carousel:after {
+    content: '';
+  }
+}
+
+.carousel-cell {
+  width: 66%;
+  height: 200px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  background: #8C8;
+  border-radius: 5px;
+  counter-increment: carousel-cell;
+}
+
+/* no margin bottom when Flickity enabled */
+.flickity-enabled .carousel-cell {
+  margin-bottom: 0;
+}
+
+/* cell number */
+.carousel-cell:before {
+  display: block;
+  text-align: center;
+  content: counter(carousel-cell);
+  line-height: 200px;
+  font-size: 80px;
+  color: white;
+}
+
+</style>
+
 {% schema %}
 {
   "name": "Featured promotions",
