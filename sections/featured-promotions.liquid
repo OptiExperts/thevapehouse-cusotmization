@@ -51,9 +51,9 @@
         {%- assign image = block.settings.image -%}
         {%- assign mobile_image = block.settings.mobile_image -%}
         {% comment %} End content settings {% endcomment %}
-
+        <div class="carousel-cell">
         <figure class="feature-section section-{{ forloop.index }} promo-{{ forloop.index }} {% render 'column-width', value: section.settings.featured_promos_per_row %} column medium-down--one-whole title-overlay-{{ section.settings.promo_text_on_image_enabled }} {% if section.settings.featured_links_animation != blank %}promo-animation--true{% endif %}" {{ block.shopify_attributes }}>
-          <div class="carousel-cell">
+          
           <div class="feature-inner feature-style--{{ section.settings.feature_style }}">
             {% if mobile_image %}
               <div class="is-hidden-mobile-only">
@@ -116,8 +116,9 @@
               </a>
             {% endif %}
           {% endif %}
-        </div>
+        
         </figure>
+      </div>
       {% endfor %}
     </div>
   </section>
