@@ -82,6 +82,7 @@
 
             {% if block.settings.text != blank or block.settings.button_label != blank or block.settings.title != blank and section.settings.promo_text_on_image_enabled != blank %}
               <figcaption class="feature-overlay">
+                <div class="carousel-cell"></div>
                 <a {% if block.settings.link != blank %}href="{{ block.settings.link }}"{% endif %}class="link-promo"></a>
                   <div class="feature-wrap">
                     {% if block.settings.title != blank %}
