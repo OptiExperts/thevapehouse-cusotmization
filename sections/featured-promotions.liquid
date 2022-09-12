@@ -122,14 +122,6 @@
 {% endif %}
 
 <style>
-  * { box-sizing: border-box; }
-
-body { font-family: sans-serif; }
-
-.carousel {
-  background: #EEE;
-}
-
 /* flickity on by default */
 .carousel:after {
   content: 'flickity';
@@ -144,12 +136,8 @@ body { font-family: sans-serif; }
 }
 
 .carousel-cell {
-  width: 66%;
-  height: 200px;
   margin-right: 10px;
   margin-bottom: 10px;
-  background: #8C8;
-  border-radius: 5px;
   counter-increment: carousel-cell;
 }
 
@@ -163,9 +151,6 @@ body { font-family: sans-serif; }
   display: block;
   text-align: center;
   content: counter(carousel-cell);
-  line-height: 200px;
-  font-size: 80px;
-  color: white;
 }
 
 </style>
