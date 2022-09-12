@@ -70,13 +70,15 @@
             {% endif %}
             {% if mobile_image %}
               </div>
-              <div class="carousel-cell is-hidden-desktop-only">
-                {%
-                  render 'image-element',
-                  image: mobile_image,
-                  alt: mobile_image.alt,
-                  stretch_width: true
-                %}
+              <div class="is-hidden-desktop-only">
+                <div class="carousel-cell ">
+                  {%
+                    render 'image-element',
+                    image: mobile_image,
+                    alt: mobile_image.alt,
+                    stretch_width: true
+                  %}
+                </div>
               </div>
             {% endif %}
 
