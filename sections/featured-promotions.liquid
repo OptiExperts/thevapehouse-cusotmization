@@ -53,7 +53,9 @@
         {% comment %} End content settings {% endcomment %}
 
         {% if section.settings.promotion_style == 'slider' %}
-        <h1>Custom Slider</h1>
+          <div class="carousel-cell">
+            <h1>carousel slider</h1>
+          </div>
         {% else %}
         <figure class="feature-section section-{{ forloop.index }} promo-{{ forloop.index }} {% render 'column-width', value: section.settings.featured_promos_per_row %} column medium-down--one-whole title-overlay-{{ section.settings.promo_text_on_image_enabled }} {% if section.settings.featured_links_animation != blank %}promo-animation--true{% endif %}" {{ block.shopify_attributes }}>
           <div class="feature-inner feature-style--{{ section.settings.feature_style }}">
