@@ -1,3 +1,7 @@
+{%- comment -%}
+This file has been modified by the Yoast SEO for Shopify app.
+You can learn more about this (and learn how to cleanly revert these changes) at https://yoa.st/removing-theme-changes.
+{%- endcomment -%}
 {% comment %}
   Product structured data
   https://developers.google.com/search/docs/data-types/products
@@ -20,7 +24,8 @@
 {% endcapture %}
 
 {%- comment -%}Yoast SEO schema control block: start.{%- endcomment -%}
-{%- if disabled_by_yoast_seo or shop.metafields.yoast_seo.settings.schema.useTheme.schema or shop.metafields.yoast_seo.settings.schema.useTheme.product -%}
+{%- assign yoast_seo_settings = shop.metafields.yoast_seo.settings.value | default: shop.metafields.yoast_seo.settings -%}
+{%- if disabled_by_yoast_seo or yoast_seo_settings.schema.useTheme.schema or yoast_seo_settings.schema.useTheme.product -%}
 <script type="application/ld+json">
   {
     "@context": "http://schema.org/",
