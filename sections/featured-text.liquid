@@ -46,21 +46,60 @@
           </h2>
           <div class="feature-divider"></div>
         {% endif %}
-        <div class="rich-text__text {{ section.settings.text_size }}">
-          {% if section.settings.content != blank %}
-            {{ section.settings.content }}
-          {% endif %}
+        <div class="truncate">
+          <div class="toggledText" id="toggledText">
+            <div class="rich-text__text {{ section.settings.text_size }}">
+              {% if section.settings.content != blank %}
+                {{ section.settings.content }}
+              {% endif %}
 
-          {% if section.settings.button_label != blank %}
-            <a class="global-button" href="{{ section.settings.button_link }}">
-              {{ section.settings.button_label }}
-            </a>
-          {% endif %}
+              {% if section.settings.button_label != blank %}
+                <a class="global-button" href="{{ section.settings.button_link }}">
+                  {{ section.settings.button_label }}
+                </a>
+              {% endif %}
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </section>
+
+<script>
+  document.querySelector('#readmore').addEventListener("click", function(e) {
+  e.preventDefault();
+  document.querySelector('#toggledText').classList.toggle('toggle');
+});
+</script>
+
+<style>
+   .toggledText {
+  height: 150px;
+  overflow: hidden;
+}
+
+.toggledText.toggle {
+ height: auto;
+}
+
+.readless-txt,
+.toggledText.toggle~#readmore span.readmore-txt {
+  display: none;
+ }
+
+.toggledText.toggle~#readmore span.readless-txt {
+   display: block;
+}
+.toggle span {
+    display: block !important;
+    color: #333 !important;
+    font-weight: 400 !important;
+    font-family: Roboto,sans-serif !important; 
+    font-size: 14px !important;
+     float: none !important;
+}
+</style>
 
 {% schema %}
 {
