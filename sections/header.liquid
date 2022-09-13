@@ -621,8 +621,7 @@
           <div
             class="nav nav--combined nav--{{ section.settings.menu_alignment }} {{ section.settings.menu_alignment }}">
             <div class="combined-menu-container">
-              {{ menu_left }}
-              {{ menu_right }}
+              {% include 'vertical-menu' %}
             </div>
 
             {{ search }}
