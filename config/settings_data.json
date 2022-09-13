@@ -125,6 +125,7 @@
     "enable_autocomplete": true,
     "search_to_display": 5,
     "product_form_style": "dropdown",
+    "show_dynamic_checkout_button": false,
     "display_product_quantity": true,
     "limit_quantity": false,
     "display_inventory_left": false,
