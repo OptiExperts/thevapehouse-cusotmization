@@ -748,7 +748,7 @@
           "main_linklist": "main-menu",
           "main_linklist2": "",
           "vertical_menu": true,
-          "dropdown_click": false,
+          "dropdown_click": true,
           "search_enabled": true,
           "fixed_header": true,
           "logo_position": "center",
