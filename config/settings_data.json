@@ -747,7 +747,7 @@
           "logo": "shopify:\/\/shop_images\/Logo_1.png",
           "main_linklist": "main-menu",
           "main_linklist2": "",
-          "vertical_menu": true,
+          "vertical_menu": false,
           "dropdown_click": false,
           "search_enabled": true,
           "fixed_header": true,
