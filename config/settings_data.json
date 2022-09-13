@@ -148,7 +148,7 @@
     "show_lock_icon": false,
     "display_tos_checkbox": true,
     "tos_page": "shopify:\/\/pages\/term-and-conditions",
-    "go_to_checkout": false,
+    "go_to_checkout": true,
     "display_special_instructions": false,
     "display_savings": true,
     "cart_message": "",
