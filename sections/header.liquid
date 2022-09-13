@@ -620,9 +620,16 @@
 
           <div
             class="nav nav--combined nav--{{ section.settings.menu_alignment }} {{ section.settings.menu_alignment }}">
+            {%- comment -%}
             <div class="combined-menu-container">
-              {% include 'navigation-desktop' %}
+              {{ menu_left }}
+              {{ menu_right }}
             </div>
+            {%- endcomment -%}
+            <ul class="menu {{ section.settings.menu_alignment }}">
+              {{ menu_left }}
+              {{ menu_right }}
+            </ul>
 
             {{ search }}
           </div>
