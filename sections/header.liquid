@@ -586,8 +586,8 @@
             {{ logo }}
 
             <div class="nav nav--combined {{ section.settings.menu_alignment }}">
-              <h1>testing</h1>
-              {% include 'navigation-desktop' %}
+              {{ menu_left }}
+              {{ menu_right }}
             </div>
 
             {{ search }}
@@ -621,8 +621,7 @@
           <div
             class="nav nav--combined nav--{{ section.settings.menu_alignment }} {{ section.settings.menu_alignment }}">
             <div class="combined-menu-container">
-              {{ menu_left }}
-              {{ menu_right }}
+              <h1>this is a test</h1>
             </div>
 
             {{ search }}
