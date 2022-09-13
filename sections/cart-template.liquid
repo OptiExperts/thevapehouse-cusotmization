@@ -99,7 +99,10 @@
 
                 <div class="two-thirds columns medium-down--one-whole cart_content_info cart__item--content">
                   <h3 class="cart__item--title">
-                    <a href="{{ item.url }}">{{ item.product.title }}</a>
+                    <a href="{{ item.url }}">{{ item.product.title }}
+  <span class="saso-cart-item-discount-notes" data-key="{{item.key}}"></span>
+  <span class="saso-cart-item-upsell-notes" data-key="{{item.key}}"></span>
+                                  </a>
                   </h3>
 
                   {% unless item.product.has_only_default_variant or item.variant.title contains "Title" %}
@@ -136,10 +139,12 @@
                 <p class="modal_price">
                   {% if item.price > 0 %}
                     <span class="money {% if item.price < item.variant.compare_at_price or item.line_level_discount_allocations.size > 0 %}sale{% endif %}">
-                      {%
+                      
+<span class="saso-cart-item-price" data-key="{{item.key}}">{%
                         render 'price-element',
                         price: item.final_price
-                      %}
+                      %}</span>
+
                     </span>
 
                     {% if item.price < item.variant.compare_at_price or item.line_level_discount_allocations.size > 0 %}
@@ -168,7 +173,7 @@
                     <p class="meta cart__item--discount">
                       <span class="label">{{ 'cart.general.discount' | t }}:</span>
                       {{ discount_allocation.discount_application.title }} (-
-                      <span class="money">
+                      <span class="">
                         {%
                           render 'price-element',
                           price: discount_allocation.amount
@@ -194,11 +199,13 @@
                   <strong>{{ 'cart.general.total' | t }}:</strong>
 
                   {% if item.line_level_discount_allocations.size > 0 %}
-                    <span class="money">
-                      {%
+                    <span class="">
+                      
+<span class="saso-cart-item-line-price" data-key="{{item.key}}">{%
                         render 'price-element',
                         price: item.final_line_price
-                      %}
+                      %}</span>
+
                     </span>
                   {% endif %}
 
@@ -224,7 +231,7 @@
                   <span class="cart_discounts--title">{{ discount_application.title }}</span>
                   <span class="cart_discounts--price">
                     -
-                    <span class="money">
+                    <span class="">
                       {%
                         render 'price-element',
                         price: discount_application.total_allocated_amount
@@ -237,11 +244,14 @@
 
             <p class="cart_subtotal js-cart_subtotal">
               <span class="right">
-                <span class="money">
-                  {%
+                <span class="">
+                  
+<span class="saso-cart-original-total">{%
                     render 'price-element',
                     price: cart.total_price
-                  %}
+                  %}</span>
+<span class="saso-cart-total"></span>
+
                 </span>
               </span>
               <span>{{ 'cart.general.subtotal' | t }}</span>
@@ -264,7 +274,7 @@
             {% if section.settings.display_savings and total_saving > 0 or section.settings.display_savings and cart.total_discount > 0 %}
               <p class="cart_savings js-cart_savings sale">
                 <span class="right">
-                  <span class="money">
+                  <span class="">
                     {% assign total_savings = total_saving | plus: cart.total_discount %}
                     {%
                       render 'price-element',
