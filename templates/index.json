@@ -85,7 +85,7 @@
         "5184637f-0593-4afc-b643-d197da2f13f1"
       ],
       "settings": {
-        "title_promo": "Special Offer",
+        "title_promo": "",
         "wide_display": true,
         "promotion_style": "grid",
         "promo_text_on_image_enabled": true,
@@ -252,7 +252,7 @@
         "16621467645902973d-2"
       ],
       "settings": {
-        "title_promo": "Spacial Offer",
+        "title_promo": "Special Offers",
         "wide_display": true,
         "promotion_style": "grid",
         "promo_text_on_image_enabled": true,
