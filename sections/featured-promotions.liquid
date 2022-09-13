@@ -75,7 +75,6 @@
             {% endif %}
             {% if mobile_image %}
               </div>
-              <div class="carousel-cell">
               <div class="is-hidden-desktop-only">
                 {%
                   render 'image-element',
@@ -84,7 +83,6 @@
                   stretch_width: true
                 %}
               </div>
-            </div>
             {% endif %}
 
             {% if block.settings.text != blank or block.settings.button_label != blank or block.settings.title != blank and section.settings.promo_text_on_image_enabled != blank %}
