@@ -342,7 +342,8 @@ You can learn more about this (and learn how to cleanly revert these changes) at
 <link rel="next" href="{{ collection.next_product }}">
 {%- comment -%} End Yoast auto-disable. {%- endcomment -%}
 {%- endif -%}{% endif %}
-  </head>
+  {{ 'storeifyapps-formbuilder-styles.css' | asset_url | stylesheet_tag }}
+</head>
 
   {% if template contains "index" %}
     {% assign feature_image = true %}
@@ -470,7 +471,8 @@ You can learn more about this (and learn how to cleanly revert these changes) at
     <script type="lazyload2" data-src="https://cdn.shopify.com/shopifycloud/storefront-recaptcha-v3/v0.5/index.js"></script>
     {%endif%}
     {%- render '__footerhash' -%}
-  </body>
+  {{ 'storeifyapps-formbuilder-script.js' | asset_url | script_tag }}
+</body>
 </html>
 {% endcapture %}
 {% assign content = content | replace_first: '<!DOCTYPE', '!DOCTYPE' | split: ' <' %}
