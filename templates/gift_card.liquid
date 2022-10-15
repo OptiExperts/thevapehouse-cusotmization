@@ -1,3 +1,7 @@
+{%- comment -%}
+This file has been modified by the Yoast SEO for Shopify app.
+You can learn more about this (and learn how to cleanly revert these changes) at https://yoa.st/removing-theme-changes.
+{%- endcomment -%}
 {% layout none %}
 {% assign formatted_initial_value = gift_card.initial_value | money_without_trailing_zeros: gift_card.currency %}
 {% assign formatted_initial_value_stripped = formatted_initial_value | strip_html %}
@@ -11,11 +15,23 @@
   <link rel="shortcut icon" type="image/x-icon" href="{{ settings.favicon | img_url: '32x32' }}">
 
   <!-- Title and description ================================================== -->
-  <title>{{ 'gift_cards.issued.title' | t: value: formatted_initial_value_stripped, shop: shop.name }}</title>
-  <meta name="description" content="{{ 'gift_cards.issued.subtext' | t }}">
+  {%- comment -%}Auto-disabled. Yoast plugin is taking care of SEO output.{%- endcomment -%}
+{%- if disabled_by_yoast_seo -%}
+<title>{{ 'gift_cards.issued.title' | t: value: formatted_initial_value_stripped, shop: shop.name }}</title>
+{%- comment -%} End Yoast auto-disable. {%- endcomment -%}
+{%- endif -%}
+  {%- comment -%}Auto-disabled. Yoast plugin is taking care of Meta Tags output.{%- endcomment -%}
+{%- if disabled_by_yoast_seo -%}
+<meta name="description" content="{{ 'gift_cards.issued.subtext' | t }}">
+{%- comment -%} End Yoast auto-disable. {%- endcomment -%}
+{%- endif -%}
 
   <!-- Helpers ================================================== -->
-  <link rel="canonical" href="{{ canonical_url }}">
+  {%- comment -%}Auto-disabled. Yoast plugin is taking care of Meta Tags output.{%- endcomment -%}
+{%- if disabled_by_yoast_seo -%}
+<link rel="canonical" href="{{ canonical_url }}">
+{%- comment -%} End Yoast auto-disable. {%- endcomment -%}
+{%- endif -%}
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="format-detection" content="telephone=no">
 
@@ -38,7 +54,7 @@
   <div class="wrapper">
     <header class="giftcard-header" role="banner">
       <div class="giftcard-header__logo">
-        <a href="{{ shop.url }}" itemprop="url">{{ shop.name }}</a>
+        <a href="{{ shop.url }}" {% if disabled_by_yoast_seo %}itemprop="url"{% endif %}>{{ shop.name }}</a>
       </div>
       <div class="shop-url">{{ shop.url }}</div>
     </header>
