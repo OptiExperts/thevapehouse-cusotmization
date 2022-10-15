@@ -1,3 +1,7 @@
+{%- comment -%}
+This file has been modified by the Yoast SEO for Shopify app.
+You can learn more about this (and learn how to cleanly revert these changes) at https://yoa.st/removing-theme-changes.
+{%- endcomment -%}
 {% unless template contains 'product' %}
   <script type="application/ld+json">
     {
@@ -29,7 +33,7 @@
     is-flex-wrap
     equal-columns--outside-trim
   "
-  itemtype="http://schema.org/ItemList"
+  {% if disabled_by_yoast_seo %}itemtype="http://schema.org/ItemList"{% endif %}
   {{ paginationType }}
 >
   {% assign for_limit = limit %}

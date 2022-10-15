@@ -1,3 +1,10 @@
+{%- comment -%}
+This file has been modified by the Yoast SEO for Shopify app.
+You can learn more about this (and learn how to cleanly revert these changes) at https://yoa.st/removing-theme-changes.
+{%- endcomment -%}
+{%- comment -%}Yoast SEO schema control block: start.{%- endcomment -%}
+{%- assign yoast_seo_settings = shop.metafields.yoast_seo.settings.value | default: shop.metafields.yoast_seo.settings -%}
+{%- if disabled_by_yoast_seo or yoast_seo_settings.schema.useTheme.schema or yoast_seo_settings.schema.useTheme.breadcrumb -%}
 <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -34,7 +41,9 @@
       }
     ]
   }
+{%- comment -%}Yoast SEO schema control block: end.{%- endcomment -%}
 </script>
+{%- endif -%}
 
 <div class="breadcrumb_text">
   <a href="{{ routes.root_url }}" title="{{ shop.name | escape }}" class="breadcrumb_link">
