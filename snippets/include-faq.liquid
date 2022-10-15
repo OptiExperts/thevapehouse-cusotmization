@@ -1,7 +1,3 @@
-{%- comment -%}
-This file has been modified by the Yoast SEO for Shopify app.
-You can learn more about this (and learn how to cleanly revert these changes) at https://yoa.st/removing-theme-changes.
-{%- endcomment -%}
 {% comment %}
 ** FAQ - dynamic **
 - Draggable section
@@ -13,9 +9,6 @@ You can learn more about this (and learn how to cleanly revert these changes) at
 {% comment %} Layout {% endcomment %}
 {%- assign width = section.settings.width -%}
 
-{%- comment -%}Yoast SEO schema control block: start.{%- endcomment -%}
-{%- assign yoast_seo_settings = shop.metafields.yoast_seo.settings.value | default: shop.metafields.yoast_seo.settings -%}
-{%- if disabled_by_yoast_seo or yoast_seo_settings.schema.useTheme.schema or yoast_seo_settings.schema.useTheme.webpage -%}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -35,9 +28,7 @@ You can learn more about this (and learn how to cleanly revert these changes) at
     {% endfor %}
   ]
 }
-{%- comment -%}Yoast SEO schema control block: end.{%- endcomment -%}
 </script>
-{%- endif -%}
 
 <section class="section">
   <a name="pagecontent" id="pagecontent"></a>
