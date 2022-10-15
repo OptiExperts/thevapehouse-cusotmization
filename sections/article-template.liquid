@@ -1,3 +1,7 @@
+{%- comment -%}
+This file has been modified by the Yoast SEO for Shopify app.
+You can learn more about this (and learn how to cleanly revert these changes) at https://yoa.st/removing-theme-changes.
+{%- endcomment -%}
 <script
   type="application/json"
   data-section-type="article-template"
@@ -36,7 +40,10 @@
       <div class="has-sidebar-option">
         <div class="container">
           <div class="breadcrumb breadcrumb-pagination-wrapper is-flex {% if section.settings.blog_breadcrumb and section.settings.blog_pagination == blank %}is-justify-left{% elsif section.settings.blog_breadcrumb == blank and section.settings.blog_pagination %}is-justify-right{% else %}is-justify-space-between{% endif %} one-whole column">
-            <script type="application/ld+json">
+            {%- comment -%}Yoast SEO schema control block: start.{%- endcomment -%}
+{%- assign yoast_seo_settings = shop.metafields.yoast_seo.settings.value | default: shop.metafields.yoast_seo.settings -%}
+{%- if disabled_by_yoast_seo or yoast_seo_settings.schema.useTheme.schema or yoast_seo_settings.schema.useTheme.breadcrumb -%}
+<script type="application/ld+json">
               {
                 "@context": "https://schema.org",
                 "@type": "BreadcrumbList",
@@ -59,7 +66,9 @@
                   }
                 ]
               }
-            </script>
+            {%- comment -%}Yoast SEO schema control block: end.{%- endcomment -%}
+</script>
+{%- endif -%}
 
             {% if section.settings.blog_breadcrumb %}
               <div class="breadcrumb_text">
@@ -347,6 +356,9 @@
   </section>
 {% endpaginate %}
 
+{%- comment -%}Yoast SEO schema control block: start.{%- endcomment -%}
+{%- assign yoast_seo_settings = shop.metafields.yoast_seo.settings.value | default: shop.metafields.yoast_seo.settings -%}
+{%- if disabled_by_yoast_seo or yoast_seo_settings.schema.useTheme.schema or yoast_seo_settings.schema.useTheme.article -%}
 <script type="application/ld+json">
   {
     "@context": "http://schema.org",
@@ -385,7 +397,9 @@
       "name": "{{ shop.name }}"
     }
   }
-  </script>
+  {%- comment -%}Yoast SEO schema control block: end.{%- endcomment -%}
+</script>
+{%- endif -%}
 
 {% schema %}
 {

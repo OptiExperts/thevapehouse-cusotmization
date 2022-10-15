@@ -1,3 +1,7 @@
+{%- comment -%}
+This file has been modified by the Yoast SEO for Shopify app.
+You can learn more about this (and learn how to cleanly revert these changes) at https://yoa.st/removing-theme-changes.
+{%- endcomment -%}
 {% comment %} you can always turn off the speedupkernel{% endcomment %}
 {%- assign speedupkernel = true -%}
 {%- assign is_admin_interface = false -%}
@@ -37,7 +41,12 @@
 <!DOCTYPE html>
 <html class="no-js no-touch" lang="{{ request.locale.iso_code }}">
   <head>{% render 'yoast-seo' %}
+{% comment -%}Auto-disabled. Yoast plugin is taking care of Meta Tags output.{%- endcomment -%}
+{%- assign yoast_seo_settings = shop.metafields.yoast_seo.settings.value | default: shop.metafields.yoast_seo.settings -%}
+{%- if disabled_by_yoast_seo or yoast_seo_settings.integrations.webmasterVerification.google == blank or yoast_seo_settings.integrations.webmasterVerification.google == null -%}
 <meta name="google-site-verification" content="TL_82mdijgk0HPtuMERn_SLUDBf01uV7pv_1l3-EhvA" />
+{%- comment -%} End Yoast auto-disable. {%- endcomment -%}
+{%- endif -%}
     <script>
       let array = [];
       function x_parentNode_insertBefore(src) {
@@ -77,7 +86,11 @@
 
     <meta charset="utf-8">
     <meta http-equiv="cleartype" content="on">
-    <meta name="robots" content="index,follow">
+    {%- comment -%}Auto-disabled. Yoast plugin is taking care of Meta Tags output.{%- endcomment -%}
+{%- if disabled_by_yoast_seo -%}
+<meta name="robots" content="index,follow">
+{%- comment -%} End Yoast auto-disable. {%- endcomment -%}
+{%- endif -%}
 
     <!-- Mobile Specific Metas -->
     <meta name="HandheldFriendly" content="True">
@@ -86,12 +99,20 @@
     <meta name="theme-color" content="{{ settings.shop_bg_color }}">
 
     {% if current_tags %}{% assign meta_tags = current_tags | join: ', ' %}{% endif %}
-    <title>
+    {%- comment -%}Auto-disabled. Yoast plugin is taking care of SEO output.{%- endcomment -%}
+{%- if disabled_by_yoast_seo -%}
+<title>
       {% if template contains "index" %}{{ page_title }}{% else %}{{ page_title }}{% if current_tags %} {{ 'general.meta.tagged_html' | t: tags: meta_tags }}{% endif %}{% if current_page != 1 %} {{ 'general.meta.page' | t: page_number: current_page }}{% endif %}{% unless page_title contains shop.name %} - {{ shop.name }}{% endunless %}{% endif %}
     </title>
+{%- comment -%} End Yoast auto-disable. {%- endcomment -%}
+{%- endif -%}
 
     {% if page_description %}
-      <meta name="description" content="{% if template contains 'search' %} {{ page_title }} - {{ shop.name }} {% else %}{{ page_description | escape }}{% if current_tags %} {{ 'general.meta.tagged_html' | t: tags: meta_tags | escape }}.{% endif %}{% if current_page != 1 %} {{ 'general.meta.page' | t: page_number: current_page }}.{% endif %}{% endif %}"/>
+      {%- comment -%}Auto-disabled. Yoast plugin is taking care of Meta Tags output.{%- endcomment -%}
+{%- if disabled_by_yoast_seo -%}
+<meta name="description" content="{% if template contains 'search' %} {{ page_title }} - {{ shop.name }} {% else %}{{ page_description | escape }}{% if current_tags %} {{ 'general.meta.tagged_html' | t: tags: meta_tags | escape }}.{% endif %}{% if current_page != 1 %} {{ 'general.meta.page' | t: page_number: current_page }}.{% endif %}{% endif %}"/>
+{%- comment -%} End Yoast auto-disable. {%- endcomment -%}
+{%- endif -%}
     {% endif %}
 
     <!-- Preconnect Domains -->
@@ -145,7 +166,11 @@
     {% else %}
       <link rel="shortcut icon" type="image/x-icon" href="{{ 'favicon.png' | asset_url }}">
     {% endif %}
-    <link rel="canonical" href="{{ canonical_url }}"/>
+    {%- comment -%}Auto-disabled. Yoast plugin is taking care of Meta Tags output.{%- endcomment -%}
+{%- if disabled_by_yoast_seo -%}
+<link rel="canonical" href="{{ canonical_url }}"/>
+{%- comment -%} End Yoast auto-disable. {%- endcomment -%}
+{%- endif -%}
 
     {% if template contains 'customer' %}
       <script type="lazyload2" data-src="{{ 'shopify_common.js' | shopify_asset_url }}" defer></script>
@@ -312,8 +337,16 @@
 
     {% render 'social-meta-info' %}
 
-    {% if collection.previous_product %}<link rel="prev" href="{{ collection.previous_product }}">{% endif %}
-    {% if collection.next_product %}<link rel="next" href="{{ collection.next_product }}">{% endif %}
+    {% if collection.previous_product %}{%- comment -%}Auto-disabled. Yoast plugin is taking care of Meta Tags output.{%- endcomment -%}
+{%- if disabled_by_yoast_seo -%}
+<link rel="prev" href="{{ collection.previous_product }}">
+{%- comment -%} End Yoast auto-disable. {%- endcomment -%}
+{%- endif -%}{% endif %}
+    {% if collection.next_product %}{%- comment -%}Auto-disabled. Yoast plugin is taking care of Meta Tags output.{%- endcomment -%}
+{%- if disabled_by_yoast_seo -%}
+<link rel="next" href="{{ collection.next_product }}">
+{%- comment -%} End Yoast auto-disable. {%- endcomment -%}
+{%- endif -%}{% endif %}
   {{ 'storeifyapps-formbuilder-styles.css' | asset_url | stylesheet_tag }}
 </head>
 
