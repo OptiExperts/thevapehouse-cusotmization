@@ -1,18 +1,10 @@
-{%- comment -%}
-This file has been modified by the Yoast SEO for Shopify app.
-You can learn more about this (and learn how to cleanly revert these changes) at https://yoa.st/removing-theme-changes.
-{%- endcomment -%}
 {% capture content %}
 <!DOCTYPE html>
 <html class="no-js no-touch" lang="{{ request.locale.iso_code }}">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="cleartype" content="on">
-    {%- comment -%}Auto-disabled. Yoast plugin is taking care of Meta Tags output.{%- endcomment -%}
-{%- if disabled_by_yoast_seo -%}
-<meta name="robots" content="index,follow">
-{%- comment -%} End Yoast auto-disable. {%- endcomment -%}
-{%- endif -%}
+    <meta name="robots" content="index,follow">
 
     <!-- Mobile Specific Metas -->
     <meta name="HandheldFriendly" content="True">
@@ -21,20 +13,12 @@ You can learn more about this (and learn how to cleanly revert these changes) at
     <meta name="theme-color" content="{{ settings.shop_bg_color }}">
 
     {% if current_tags %}{% assign meta_tags = current_tags | join: ', ' %}{% endif %}
-    {%- comment -%}Auto-disabled. Yoast plugin is taking care of SEO output.{%- endcomment -%}
-{%- if disabled_by_yoast_seo -%}
-<title>
+    <title>
       {% if template contains "index" %}{{ page_title }}{% else %}{{ page_title }}{% if current_tags %} {{ 'general.meta.tagged_html' | t: tags: meta_tags }}{% endif %}{% if current_page != 1 %} {{ 'general.meta.page' | t: page_number: current_page }}{% endif %}{% unless page_title contains shop.name %} - {{ shop.name }}{% endunless %}{% endif %}
     </title>
-{%- comment -%} End Yoast auto-disable. {%- endcomment -%}
-{%- endif -%}
 
     {% if page_description %}
-      {%- comment -%}Auto-disabled. Yoast plugin is taking care of Meta Tags output.{%- endcomment -%}
-{%- if disabled_by_yoast_seo -%}
-<meta name="description" content="{% if template contains 'search' %} {{ page_title }} - {{ shop.name }} {% else %}{{ page_description | escape }}{% if current_tags %} {{ 'general.meta.tagged_html' | t: tags: meta_tags | escape }}.{% endif %}{% if current_page != 1 %} {{ 'general.meta.page' | t: page_number: current_page }}.{% endif %}{% endif %}"/>
-{%- comment -%} End Yoast auto-disable. {%- endcomment -%}
-{%- endif -%}
+      <meta name="description" content="{% if template contains 'search' %} {{ page_title }} - {{ shop.name }} {% else %}{{ page_description | escape }}{% if current_tags %} {{ 'general.meta.tagged_html' | t: tags: meta_tags | escape }}.{% endif %}{% if current_page != 1 %} {{ 'general.meta.page' | t: page_number: current_page }}.{% endif %}{% endif %}"/>
     {% endif %}
 
     <!-- Preconnect Domains -->
@@ -94,11 +78,7 @@ You can learn more about this (and learn how to cleanly revert these changes) at
     {% else %}
       <link rel="shortcut icon" type="image/x-icon" href="{{ 'favicon.png' | asset_url }}">
     {% endif %}
-    {%- comment -%}Auto-disabled. Yoast plugin is taking care of Meta Tags output.{%- endcomment -%}
-{%- if disabled_by_yoast_seo -%}
-<link rel="canonical" href="{{ canonical_url }}"/>
-{%- comment -%} End Yoast auto-disable. {%- endcomment -%}
-{%- endif -%}
+    <link rel="canonical" href="{{ canonical_url }}"/>
 
     {% if template contains 'customer' %}
       <script src="{{ 'shopify_common.js' | shopify_asset_url }}" defer></script>
