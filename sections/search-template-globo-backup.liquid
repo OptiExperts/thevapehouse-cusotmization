@@ -97,7 +97,7 @@ You can learn more about this (and learn how to cleanly revert these changes) at
 
       {% comment %} Check to see if sidebar should be enabled {% endcomment %}
       {% if section.blocks.size > 0 %}
-        {% assign sidebar = false %}
+        {% assign sidebar = true %}
       {% else %}
         {% assign sidebar = false %}
       {% endif %}
@@ -136,7 +136,7 @@ You can learn more about this (and learn how to cleanly revert these changes) at
               {% else %}
                 {% if settings.search_option == 'product,page,article' or search.results.first.price == blank %}
                   <div class="one-whole column">
-                    <div data-section-id="{% if section.id %}{{section.id}}{% endif %}" data-sectionId="{% if section.id %}{{section.id}}{% endif %}" {% if section.blocks %}data-blocks='{ {%- capture blocks_json -%}{% for block in section.blocks %}{%- capture block_json -%}"{{ block.type }}":{{ block.settings | json }}{%- endcapture -%}{{ block_json | prepend: ","  }}{% endfor %}{%- endcapture -%}{{ blocks_json | remove_first: "," }} }' {% endif %} data-settings='{% if section.settings %}{{section.settings | json}}{% endif %}' id="gf-products" class="product-list product-list--search" {% if settings.pagination_type == 'load_more_button' %}data-load-more--grid{% endif %}>
+                    <div class="product-list product-list--search" {% if settings.pagination_type == 'load_more_button' %}data-load-more--grid{% endif %}>
                       {% for item in search.results %}
                         <div class="product_row is-flex is-flex-wrap equal-columns--outside-trim" {% if settings.pagination_type == 'load_more_button' %}data-load-more--grid-item{% endif %}>
                           {%- assign featured_image = false -%}

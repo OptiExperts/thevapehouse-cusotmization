@@ -248,7 +248,7 @@
         <!----- Content For Header section -->
         {% unless content_for_header contains "Shopify.designMode" %}
         {%- capture __content_for_header -%}
-        {{ content_for_header }}
+        {% include 'globo.filter.script' %}{{ content_for_header }}
         {%- endcapture -%}
     
         {%- assign __content_for_header = __content_for_header
@@ -447,7 +447,8 @@
 
 {% render 'special-offers' %}
 
-</body>
+{% include 'globo.filter.action' %}
+	</body>
 </html>
 {% endcapture %}
 {% assign content = content | replace_first: '<!DOCTYPE', '!DOCTYPE' | split: ' <' %}
