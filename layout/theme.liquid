@@ -348,7 +348,7 @@ You can learn more about this (and learn how to cleanly revert these changes) at
 {%- comment -%} End Yoast auto-disable. {%- endcomment -%}
 {%- endif -%}{% endif %}
   {{ 'storeifyapps-formbuilder-styles.css' | asset_url | stylesheet_tag }}
-</head>
+<!--DOOFINDER-SHOPIFY--> {% if content_for_header contains 'doofinder-installed.js' %} {% render 'doofinder-script-tag' %} {% endif %} <!--/DOOFINDER-SHOPIFY--></head>
 
   {% if template contains "index" %}
     {% assign feature_image = true %}
