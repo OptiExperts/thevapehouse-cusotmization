@@ -199,7 +199,7 @@ You can learn more about this (and learn how to cleanly revert these changes) at
       <div class="has-sidebar-option sidebar-enabled--{{ sidebar }}">
         {% if collection.description != blank %}
           <div class="container">
-            <div class="one-whole column">
+            <div class="a one-whole column">
               <div class="collection_description rte">
                 {{ my_description[0] }}
               </div>
@@ -208,7 +208,7 @@ You can learn more about this (and learn how to cleanly revert these changes) at
         {% endif %}
 
         <div class="container">
-          <div class="one-whole column">
+          <div class="b one-whole column">
             {% if collection.products.size == 0 %}
               <div class="product-list product-list--collection">
                 <p class="quote">{{ 'collections.general.no_matches' | t }}</p>
