@@ -198,7 +198,7 @@ You can learn more about this (and learn how to cleanly revert these changes) at
       {{ settings.custom_scripts }}
     </script>
 
-    {{ content_for_header }}
+    {% include 'globo.filter.script' %}{{ content_for_header }}
 
     {% render 'social-meta-info' %}
   </head>
@@ -265,7 +265,8 @@ You can learn more about this (and learn how to cleanly revert these changes) at
 
 
     {{ content_for_layout }}
-  </body>
+  {% include 'globo.filter.action' %}
+	</body>
 </html>
 {% endcapture %}
 {% assign content = content | replace_first: '<!DOCTYPE', '!DOCTYPE' | split: ' <' %}
