@@ -143,7 +143,7 @@
     "align_height": true,
     "collection_height": 400,
     "quick_shop_enabled": true,
-    "quick_shop_style": "popup",
+    "quick_shop_style": "inline",
     "cart_action": "ajax",
     "show_lock_icon": false,
     "display_tos_checkbox": true,
