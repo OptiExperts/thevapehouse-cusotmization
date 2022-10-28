@@ -114,7 +114,24 @@
          
           {% endif %}
           {% if settings.quick_shop_enabled and settings.quick_shop_style == 'popup' %}
-             <div>Hello</div>
+            <{% if type == 'anchor-tag' %}a{% else %}button{% endif %}
+                class="
+                  quick_shop
+                  ss-icon
+                  js-quick-shop-link
+                  thumbnail-overlay__button
+                  global-button
+                  global-button--product-grid-text-hover
+                "
+                data-id="{{ product.id }}"
+                data-url="{{ product.url }}"
+              >
+                {% if label != blank %}
+                  {{ label | escape }}
+                {% else %}
+                 {% endraw %} {{ 'collections.general.quick_shop' | t }} {% raw %}
+                {% endif %}
+          </{% if type == 'anchor-tag' %}a{% else %}button{% endif %}>
       {% endif %}
         </div>
       </div>
