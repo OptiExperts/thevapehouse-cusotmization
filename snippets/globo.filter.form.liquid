@@ -1,4 +1,5 @@
 {% raw %}
+<h2>{% if translation.form.heading %}{{translation.form.heading}}{% else %}Search products{% endif %}</h2>
 <form action="{% endraw %}{{ routes.search_url }}{% raw %}" method="get" role="search">
     <div class="gf-form-inner">
         {% assign next_select_show_values = false %}
