@@ -98,10 +98,10 @@
   };
 
 </script>
-<script defer src="{{ 'v5.globo.filter.lib.js' | asset_url }}"></script>
+<script defer type="lazyload2" data-src="{{ 'v5.globo.filter.lib.js' | asset_url }}"></script>
 {% if request.page_type == 'collection' or request.page_type == 'search' or home_filter or has_form %}<link rel="preload stylesheet" href="{{ 'v5.globo.filter.css' | asset_url }}" as="style">
 {% endif %}
-{% if globo_search %}<link rel="preload stylesheet" href="{{ 'v5.globo.search.css' | asset_url }}" as="style">
+{% if globo_search %}<link rel="preload stylesheet" data-href="{{ 'v5.globo.search.css' | asset_url }}" as="style">
 {% endif %}
 {% endif %}
 
