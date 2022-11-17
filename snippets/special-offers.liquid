@@ -115,7 +115,7 @@ Please add following code in theme.liquid almost at the end, BEFORE the line {% 
 
 </style>
 
-{{ 'special-offers.scss.css' | asset_url | stylesheet_tag }}
+<link  rel="stylesheet" data-href="{{ 'special-offers.scss.css' | asset_url }}">
 
 {% render 'special-offers-templates' %}
 
