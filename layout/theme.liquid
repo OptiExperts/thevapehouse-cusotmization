@@ -475,12 +475,13 @@ You can learn more about this (and learn how to cleanly revert these changes) at
     <script type="lazyload2" async="" data-src="https://www.gstatic.com/recaptcha/releases/TbD3vPFlUWKZD-9L4ZxB0HJI/recaptcha__en.js" crossorigin="anonymous" integrity="sha384-pW7zXhudGWVlF6CkWBd8dS8KzT6L2vJNeTFwpRQ10v9UhG1wVmMDY5pNPr52knQ2"></script>
     <script type="lazyload2" data-src="https://cdn.shopify.com/shopifycloud/storefront-recaptcha-v3/v0.5/index.js"></script>
     {%endif%}
-    {%- render '__footerhash' -%}
-  {{ 'storeifyapps-formbuilder-script.js' | asset_url | script_tag }}
+    
+  <script type="lazyload2" data-href="{{ 'storeifyapps-formbuilder-script.js' | asset_url }}">
 
 {% render 'special-offers' %}
 
 {% include 'globo.filter.action' %}
+  {%- render '__footerhash' -%}
 	</body>
 </html>
 {% endcapture %}
