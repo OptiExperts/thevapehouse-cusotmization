@@ -135,7 +135,7 @@
           {% endif %}
 
           {% if object.settings.read_more_link %}
-            <a
+          <p style="display: none;"> {{ article.title | escape }} <a
               class="
                 {% if settings.read_more_style == 'button' %}
                   blog__read-more-button global-button global-button--text
@@ -147,7 +147,7 @@
               title="{{ article.title | escape }}"
             >
               {{ 'blogs.general.continue_reading_html' | t }}
-            </a>
+            </a></p>
           {% endif %}
         </div>
       {% endfor %}
@@ -231,7 +231,7 @@
           {% endif %}
 
           {% if object.settings.read_more_link %}
-            <a
+            <p
               class="
                 {% if settings.read_more_style == 'button' %}
                   blog__read-more-button global-button global-button--text
@@ -243,7 +243,7 @@
               title="{{ article.title | escape }}"
             >
               {{ 'blogs.general.continue_reading_html' | t }}
-            </a>
+            </p>
           {% endif %}
         </div>
       {% endfor %}
