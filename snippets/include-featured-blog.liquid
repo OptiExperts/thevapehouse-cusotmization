@@ -4,7 +4,7 @@
 {% endcomment %}
 
 {% comment %} Assign object as block or section {% endcomment %}
-  {% if type == 'block' %}
+{% if type == 'block' %}
   {%- assign object = block -%}
 {% else %}
   {%- assign object = section -%}
@@ -22,20 +22,25 @@
 {%- assign custom_css = object.settings.custom_css -%}
 
 {% comment %} Section specific CSS {% endcomment %}
-  {% style %}
-{% render 'css-loop',
+{% style %}
+  {%
+    render 'css-loop',
     css: custom_css,
-    id: id %}
+    id: id
+  %}
 {% endstyle %}
 
-  <section class="section {{ css_class }}"> <div class="container">
+<section class="section {{ css_class }}">
+  <div class="container">
     {% if title != blank %}
       <div class="one-whole column">
-        <h2 class="
-                        title
-                        center
-                        blog
-                      ">
+        <h2
+          class="
+            title
+            center
+            blog
+          "
+        >
           <a {% if blog.url != blank %}href="{{ blog.url }}"{% endif %}>{{ title }}</a>
         </h2>
         <div class="feature-divider"></div>
@@ -44,22 +49,25 @@
 
     {% if blog != blank %}
       {% for article in blog.articles limit: object.settings.home_page_articles %}
-        <div class="
-                        {%
-                          render 'column-width',
-                          value: object.settings.home_page_articles
-                        %}
-                        column
-                        article
-                        medium-down--one-half
-                        small-down--one-whole
-                      ">
+        <div
+          class="
+            {%
+              render 'column-width',
+              value: object.settings.home_page_articles
+            %}
+            column
+            article
+            medium-down--one-half
+            small-down--one-whole
+          "
+        >
           {% if article.image != blank %}
             <a class="blog-post-image-wrapper" href="{{ article.url }}">
               {%
-                 render 'image-element',
-                 image: article.image,
-                 alt: article.image.alt %}
+                render 'image-element',
+                image: article.image,
+                alt: article.image.alt
+              %}
             </a>
           {% endif %}
 
@@ -78,8 +86,9 @@
 
             {% if object.settings.read_time %}
               {%
-                 render 'include-read-time',
-                 article: article %}
+                render 'include-read-time',
+                article: article
+              %}
             {% endif %}
 
             {% if object.settings.blog_comment_count %}
@@ -88,7 +97,8 @@
                   <a
                     class="disqus-comment-count"
                     href="{{ article.url }}#disqus_thread"
-                    data-disqus-identifier="{{ article.id }}">
+                    data-disqus-identifier="{{ article.id }}"
+                  >
                     {{ 'blogs.counts.comments_with_count' | t: count: 0 }}
                   </a>
                 </span>
@@ -125,36 +135,36 @@
           {% endif %}
 
           {% if object.settings.read_more_link %}
-            <p style="display: none;">
-              {{ article.title | escape }}
-              <a
-                class='
+            <a
+              class="
                 {% if settings.read_more_style == 'button' %}
                   blog__read-more-button global-button global-button--text
                 {% else %}
                   read-more-link
                 {% endif %}
-                "
-                href="{{ article.url }}"
-                title="{{ article.title | escape }}">
-                {{ 'blogs.general.continue_reading_html' | t }}
-              </a>
-            </p>
+              "
+              href="{{ article.url }}"
+              title="{{ article.title | escape }}"
+            >
+              {{ 'blogs.general.continue_reading_html' | t }}
+            </a>
           {% endif %}
         </div>
       {% endfor %}
     {% else %}
       {% for i in (1..object.settings.home_page_articles) %}
-        <div class="
-                        {%
-                          render 'column-width',
-                          value: object.settings.home_page_articles
-                        %}
-                        column
-                        article
-                        medium-down--one-half
-                        small-down--one-whole
-                      ">
+        <div
+          class="
+            {%
+              render 'column-width',
+              value: object.settings.home_page_articles
+            %}
+            column
+            article
+            medium-down--one-half
+            small-down--one-whole
+          "
+        >
           <a class="blog-post-image-wrapper" href="#">
             {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
           </a>
@@ -174,8 +184,9 @@
 
             {% if object.settings.read_time %}
               {%
-                 render 'include-read-time',
-                 article: article %}
+                render 'include-read-time',
+                article: article
+              %}
             {% endif %}
 
             {% if object.settings.blog_comment_count %}
@@ -184,7 +195,8 @@
                   <a
                     class="disqus-comment-count"
                     href="#"
-                    data-disqus-identifier="#">
+                    data-disqus-identifier="#"
+                  >
                     {{ 'blogs.counts.comments_with_count' | t: count: 0 }}
                   </a>
                 </span>
@@ -219,21 +231,19 @@
           {% endif %}
 
           {% if object.settings.read_more_link %}
-            <p style="display: none;">
-              {{ article.title | escape }}
-              <a
-                class='
+            <a
+              class="
                 {% if settings.read_more_style == 'button' %}
                   blog__read-more-button global-button global-button--text
                 {% else %}
                   read-more-link
                 {% endif %}
-                "
-                href="{{ article.url }}"
-                title="{{ article.title | escape }}">
-                {{ 'blogs.general.continue_reading_html' | t }}
-              </a>
-            </p>
+              "
+              href="{{ article.url }}"
+              title="{{ article.title | escape }}"
+            >
+              {{ 'blogs.general.continue_reading_html' | t }}
+            </a>
           {% endif %}
         </div>
       {% endfor %}
