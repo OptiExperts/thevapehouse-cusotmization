@@ -170,7 +170,7 @@
               {% endif %}
 
               {% if section.settings.read_more_link %}
-                <a
+                <p style="display: none;"> {{ article.title | escape }} <a
                   href="{{ article.url }}"
                   title="{{ article.title | escape }}"
                   class="
@@ -182,7 +182,7 @@
                   "
                 >
                   {{ 'blogs.general.continue_reading_html' | t }}
-                </a>
+                </a></p>
               {% endif %}
             </div>
           {% endfor %}
