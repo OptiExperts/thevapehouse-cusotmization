@@ -2209,6 +2209,14 @@
       "1629301385589a7c96",
       "1624997069b4e34bcd",
       "16239170677cd56038"
-    ]
+    ],
+    "blocks": {
+      "yoast-seo-metatags": {
+        "type": "shopify:\/\/apps\/yoast-seo-seo-for-everyone\/blocks\/metatags\/7c777011-bc88-4743-a24e-64336e1e5b46",
+        "disabled": false,
+        "settings": {
+        }
+      }
+    }
   }
 }
