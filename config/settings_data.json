@@ -1304,12 +1304,17 @@
             "settings": {
               "richtext_top": "",
               "image_caption_top": "",
-              "menu_1": "",
+              "image_link_top": "",
+              "menu_1": "e-liquids",
               "menu_1_link": "shopify:\/\/collections\/tidy-juice-e-liquid-10ml",
               "menu_2": "",
+              "menu_2_link": "",
               "menu_3": "",
+              "menu_3_link": "",
               "menu_4": "",
+              "menu_4_link": "",
               "image_caption_bottom": "",
+              "image_link_bottom": "",
               "richtext_bottom": ""
             }
           },
@@ -1318,12 +1323,17 @@
             "settings": {
               "richtext_top": "",
               "image_caption_top": "",
+              "image_link_top": "",
               "menu_1": "",
               "menu_1_link": "shopify:\/\/collections\/womens-apparel",
               "menu_2": "",
+              "menu_2_link": "",
               "menu_3": "",
+              "menu_3_link": "",
               "menu_4": "",
+              "menu_4_link": "",
               "image_caption_bottom": "",
+              "image_link_bottom": "",
               "richtext_bottom": ""
             }
           },
@@ -1332,12 +1342,17 @@
             "settings": {
               "richtext_top": "",
               "image_caption_top": "",
+              "image_link_top": "",
               "menu_1": "",
               "menu_1_link": "shopify:\/\/collections",
               "menu_2": "",
+              "menu_2_link": "",
               "menu_3": "",
+              "menu_3_link": "",
               "menu_4": "",
+              "menu_4_link": "",
               "image_caption_bottom": "",
+              "image_link_bottom": "",
               "richtext_bottom": ""
             }
           },
@@ -1346,11 +1361,17 @@
             "settings": {
               "richtext_top": "<p><\/p><p><\/p>",
               "image_caption_top": "",
+              "image_link_top": "",
               "menu_1": "",
+              "menu_1_link": "",
               "menu_2": "",
+              "menu_2_link": "",
               "menu_3": "",
+              "menu_3_link": "",
               "menu_4": "",
+              "menu_4_link": "",
               "image_caption_bottom": "",
+              "image_link_bottom": "",
               "richtext_bottom": ""
             }
           }
