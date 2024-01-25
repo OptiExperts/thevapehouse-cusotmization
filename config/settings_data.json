@@ -1625,9 +1625,9 @@
             "type": "column",
             "settings": {
               "richtext_top": "",
-              "image_caption_top": "Time to get excited about our new collection for Men!",
-              "image_link_top": "shopify:\/\/collections\/mens-apparel",
-              "menu_1": "",
+              "image_caption_top": "",
+              "image_link_top": "",
+              "menu_1": "disposable-vapes",
               "menu_1_link": "",
               "menu_2": "",
               "menu_2_link": "",
