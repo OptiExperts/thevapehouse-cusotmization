@@ -117,10 +117,10 @@
     "footer_heading_font_size": 18,
     "footer_font_size": 13,
     "mega_menu_1": true,
-    "mega_menu_2": false,
-    "mega_menu_3": false,
-    "mega_menu_4": false,
-    "mega_menu_5": false,
+    "mega_menu_2": true,
+    "mega_menu_3": true,
+    "mega_menu_4": true,
+    "mega_menu_5": true,
     "search_option": "product",
     "enable_autocomplete": true,
     "search_to_display": 5,
@@ -1394,12 +1394,17 @@
             "settings": {
               "richtext_top": "",
               "image_caption_top": "",
+              "image_link_top": "",
               "menu_1": "",
               "menu_1_link": "shopify:\/\/collections\/yoga-props",
               "menu_2": "",
+              "menu_2_link": "",
               "menu_3": "",
+              "menu_3_link": "",
               "menu_4": "",
+              "menu_4_link": "",
               "image_caption_bottom": "",
+              "image_link_bottom": "",
               "richtext_bottom": ""
             }
           },
@@ -1408,12 +1413,17 @@
             "settings": {
               "richtext_top": "",
               "image_caption_top": "",
+              "image_link_top": "",
               "menu_1": "",
               "menu_1_link": "shopify:\/\/collections\/yoga-mats-towels",
               "menu_2": "",
+              "menu_2_link": "",
               "menu_3": "",
+              "menu_3_link": "",
               "menu_4": "",
+              "menu_4_link": "",
               "image_caption_bottom": "",
+              "image_link_bottom": "",
               "richtext_bottom": ""
             }
           },
@@ -1424,10 +1434,15 @@
               "image_caption_top": "Try our new Cork Yoga Brick for soft but solid support",
               "image_link_top": "shopify:\/\/products\/cork-yoga-brick",
               "menu_1": "",
+              "menu_1_link": "",
               "menu_2": "",
+              "menu_2_link": "",
               "menu_3": "",
+              "menu_3_link": "",
               "menu_4": "",
+              "menu_4_link": "",
               "image_caption_bottom": "",
+              "image_link_bottom": "",
               "richtext_bottom": ""
             }
           },
@@ -1436,12 +1451,17 @@
             "settings": {
               "richtext_top": "",
               "image_caption_top": "",
+              "image_link_top": "",
               "menu_1": "",
               "menu_1_link": "shopify:\/\/collections\/yoga-bags",
               "menu_2": "",
+              "menu_2_link": "",
               "menu_3": "",
+              "menu_3_link": "",
               "menu_4": "",
+              "menu_4_link": "",
               "image_caption_bottom": "",
+              "image_link_bottom": "",
               "richtext_bottom": ""
             }
           },
@@ -1450,11 +1470,17 @@
             "settings": {
               "richtext_top": "",
               "image_caption_top": "",
+              "image_link_top": "",
               "menu_1": "",
+              "menu_1_link": "",
               "menu_2": "",
+              "menu_2_link": "",
               "menu_3": "",
+              "menu_3_link": "",
               "menu_4": "",
+              "menu_4_link": "",
               "image_caption_bottom": "",
+              "image_link_bottom": "",
               "richtext_bottom": "<p>Check out our full lineup of yoga accessories to help you with your daily meditation practice and fitness goals...<\/p>"
             }
           }
@@ -1602,10 +1628,15 @@
               "image_caption_top": "Time to get excited about our new collection for Men!",
               "image_link_top": "shopify:\/\/collections\/mens-apparel",
               "menu_1": "",
+              "menu_1_link": "",
               "menu_2": "",
+              "menu_2_link": "",
               "menu_3": "",
+              "menu_3_link": "",
               "menu_4": "",
+              "menu_4_link": "",
               "image_caption_bottom": "",
+              "image_link_bottom": "",
               "richtext_bottom": ""
             }
           },
@@ -1614,13 +1645,17 @@
             "settings": {
               "richtext_top": "",
               "image_caption_top": "",
+              "image_link_top": "",
               "menu_1": "",
               "menu_1_link": "shopify:\/\/collections\/womens-apparel",
               "menu_2": "",
               "menu_2_link": "shopify:\/\/collections\/mens-apparel",
               "menu_3": "",
+              "menu_3_link": "",
               "menu_4": "",
+              "menu_4_link": "",
               "image_caption_bottom": "",
+              "image_link_bottom": "",
               "richtext_bottom": ""
             }
           },
@@ -1629,13 +1664,17 @@
             "settings": {
               "richtext_top": "",
               "image_caption_top": "",
+              "image_link_top": "",
               "menu_1": "",
               "menu_1_link": "shopify:\/\/collections\/yoga-bags",
               "menu_2": "",
               "menu_2_link": "shopify:\/\/collections\/yoga-mats-towels",
               "menu_3": "",
+              "menu_3_link": "",
               "menu_4": "",
+              "menu_4_link": "",
               "image_caption_bottom": "",
+              "image_link_bottom": "",
               "richtext_bottom": ""
             }
           },
@@ -1644,13 +1683,17 @@
             "settings": {
               "richtext_top": "",
               "image_caption_top": "",
+              "image_link_top": "",
               "menu_1": "",
               "menu_1_link": "shopify:\/\/collections\/yoga-props",
               "menu_2": "",
               "menu_2_link": "shopify:\/\/collections\/sale",
               "menu_3": "",
+              "menu_3_link": "",
               "menu_4": "",
+              "menu_4_link": "",
               "image_caption_bottom": "",
+              "image_link_bottom": "",
               "richtext_bottom": ""
             }
           },
@@ -1661,10 +1704,15 @@
               "image_caption_top": "Meet our lovely team!",
               "image_link_top": "shopify:\/\/pages\/our-team",
               "menu_1": "",
+              "menu_1_link": "",
               "menu_2": "",
+              "menu_2_link": "",
               "menu_3": "",
+              "menu_3_link": "",
               "menu_4": "",
+              "menu_4_link": "",
               "image_caption_bottom": "",
+              "image_link_bottom": "",
               "richtext_bottom": ""
             }
           }
