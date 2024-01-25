@@ -1383,7 +1383,7 @@
           "1496938566234"
         ],
         "settings": {
-          "parent": "E-liquids"
+          "parent": ""
         }
       },
       "mega-menu-2": {
@@ -1493,7 +1493,7 @@
           "1496938715820"
         ],
         "settings": {
-          "parent": "Accessories"
+          "parent": ""
         }
       },
       "page-details-template": {
@@ -1876,11 +1876,17 @@
             "settings": {
               "richtext_top": "<p>Add description, images, menus and links to your mega menu<\/p>",
               "image_caption_top": "",
+              "image_link_top": "",
               "menu_1": "",
+              "menu_1_link": "",
               "menu_2": "",
+              "menu_2_link": "",
               "menu_3": "",
+              "menu_3_link": "",
               "menu_4": "",
+              "menu_4_link": "",
               "image_caption_bottom": "",
+              "image_link_bottom": "",
               "richtext_bottom": ""
             }
           },
@@ -1889,11 +1895,17 @@
             "settings": {
               "richtext_top": "<p>A column with no settings can be used as a spacer<\/p>",
               "image_caption_top": "",
+              "image_link_top": "",
               "menu_1": "",
+              "menu_1_link": "",
               "menu_2": "",
+              "menu_2_link": "",
               "menu_3": "",
+              "menu_3_link": "",
               "menu_4": "",
+              "menu_4_link": "",
               "image_caption_bottom": "",
+              "image_link_bottom": "",
               "richtext_bottom": ""
             }
           },
@@ -1902,11 +1914,17 @@
             "settings": {
               "richtext_top": "",
               "image_caption_top": "",
+              "image_link_top": "",
               "menu_1": "",
+              "menu_1_link": "",
               "menu_2": "",
+              "menu_2_link": "",
               "menu_3": "",
+              "menu_3_link": "",
               "menu_4": "",
+              "menu_4_link": "",
               "image_caption_bottom": "",
+              "image_link_bottom": "",
               "richtext_bottom": ""
             }
           },
@@ -1915,11 +1933,17 @@
             "settings": {
               "richtext_top": "<p>Link to your collections, sales and even external links<\/p>",
               "image_caption_top": "",
+              "image_link_top": "",
               "menu_1": "",
+              "menu_1_link": "",
               "menu_2": "",
+              "menu_2_link": "",
               "menu_3": "",
+              "menu_3_link": "",
               "menu_4": "",
+              "menu_4_link": "",
               "image_caption_bottom": "",
+              "image_link_bottom": "",
               "richtext_bottom": ""
             }
           },
@@ -1928,11 +1952,17 @@
             "settings": {
               "richtext_top": "<p>Add up to five columns<\/p>",
               "image_caption_top": "",
+              "image_link_top": "",
               "menu_1": "",
+              "menu_1_link": "",
               "menu_2": "",
+              "menu_2_link": "",
               "menu_3": "",
+              "menu_3_link": "",
               "menu_4": "",
+              "menu_4_link": "",
               "image_caption_bottom": "",
+              "image_link_bottom": "",
               "richtext_bottom": ""
             }
           }
@@ -1956,11 +1986,17 @@
             "settings": {
               "richtext_top": "<p>Add description, images, menus and links to your mega menu<\/p>",
               "image_caption_top": "",
+              "image_link_top": "",
               "menu_1": "",
+              "menu_1_link": "",
               "menu_2": "",
+              "menu_2_link": "",
               "menu_3": "",
+              "menu_3_link": "",
               "menu_4": "",
+              "menu_4_link": "",
               "image_caption_bottom": "",
+              "image_link_bottom": "",
               "richtext_bottom": ""
             }
           },
@@ -1969,11 +2005,17 @@
             "settings": {
               "richtext_top": "<p>A column with no settings can be used as a spacer<\/p>",
               "image_caption_top": "",
+              "image_link_top": "",
               "menu_1": "",
+              "menu_1_link": "",
               "menu_2": "",
+              "menu_2_link": "",
               "menu_3": "",
+              "menu_3_link": "",
               "menu_4": "",
+              "menu_4_link": "",
               "image_caption_bottom": "",
+              "image_link_bottom": "",
               "richtext_bottom": ""
             }
           },
@@ -1982,11 +2024,17 @@
             "settings": {
               "richtext_top": "",
               "image_caption_top": "",
+              "image_link_top": "",
               "menu_1": "",
+              "menu_1_link": "",
               "menu_2": "",
+              "menu_2_link": "",
               "menu_3": "",
+              "menu_3_link": "",
               "menu_4": "",
+              "menu_4_link": "",
               "image_caption_bottom": "",
+              "image_link_bottom": "",
               "richtext_bottom": ""
             }
           },
@@ -1995,11 +2043,17 @@
             "settings": {
               "richtext_top": "<p>Link to your collections, sales and even external links<\/p>",
               "image_caption_top": "",
+              "image_link_top": "",
               "menu_1": "",
+              "menu_1_link": "",
               "menu_2": "",
+              "menu_2_link": "",
               "menu_3": "",
+              "menu_3_link": "",
               "menu_4": "",
+              "menu_4_link": "",
               "image_caption_bottom": "",
+              "image_link_bottom": "",
               "richtext_bottom": ""
             }
           },
@@ -2008,11 +2062,17 @@
             "settings": {
               "richtext_top": "<p>Add up to five columns<\/p>",
               "image_caption_top": "",
+              "image_link_top": "",
               "menu_1": "",
+              "menu_1_link": "",
               "menu_2": "",
+              "menu_2_link": "",
               "menu_3": "",
+              "menu_3_link": "",
               "menu_4": "",
+              "menu_4_link": "",
               "image_caption_bottom": "",
+              "image_link_bottom": "",
               "richtext_bottom": ""
             }
           }
