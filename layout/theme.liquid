@@ -36,7 +36,7 @@
 {% capture content %}
 <!DOCTYPE html>
 <html class="no-js no-touch" lang="{{ request.locale.iso_code }}">
-  <head>
+  <head>{% render 'yoast-seo' %}
    {%- comment -%}Auto-disabled. Yoast plugin is taking care of Meta Tags output.{%- endcomment -%}
 {%- if disabled_by_yoast_seo -%}
 <meta name="description" content="The Vape house, The best vapes in country">
